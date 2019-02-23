@@ -10,7 +10,8 @@
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <!-- body -->
@@ -18,70 +19,35 @@
 
   <!-- header -->
   <section class="hero is-primary is-bold">
-    <!-- todo: change assignment and name -->
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Visualization Assignment
-        </h1>
-        <h2 class="subtitle">
-          Full Name
-        </h2>
-      </div>
-    </div>
-
-    <!-- todo: change navigation as needed -->
-    <div class="hero-foot">
-      <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-
-          <div class="navbar-brand">
-            <a class="navbar-item" href="#top">
-              <span class="icon">
-                <i class="fas fa-home"></i>
-              </span>
-              <span>Home</span>
-            </a>
-          </div>
-
-          <div id="main-navbar" class="navbar-menu">
-            <a class="navbar-item" href="#vis1">
-              <span class="icon">
-                <i class="fas fa-chart-area"></i>
-              </span>
-              <span>Visualization 1</span>
-            </a>
-          </div>
-
-          <div class="navbar-end">
-            <a class="navbar-item" href="#grade">
-              <span class="icon">
-                <i class="fas fa-tasks"></i>
-              </span>
-              <span>Grade</span>
-            </a>
-
-            <a class="navbar-item" href="#about">
-              <span class="icon">
-                <i class="fas fa-info-circle"></i>
-              </span>
-              <span>About</span>
-            </a>
-          </div>
-
-        </nav>
+          <h1 class="title">
+            Visualization: The Role of Colleges in Intergenerational Mobility
+          </h1>
+          <h2 class="subtitle">
+            Brian Sung
+          </h2>
       </div>
     </div>
   </section>
 
+  <section class="section" id="prototype">
+    <div class="container content">
+      <h2>Prototype</h2>
+
+      <img src="https://bulma.io/images/placeholders/128x128.png" class="prototypes">
+    </div>
+  </section>
+
+  <!-- separator between sections -->
+  <hr class="container">
+
   <!-- todo: add sections as necessary -->
   <section class="section">
     <div class="container content">
-      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
-      <h2>Visualization 1</h2>
+      <h2>D3 Visualization</h2>
 
-      <svg width="100%" height="400" style="background-color: whitesmoke; border: 1px solid black;">
-      </svg>
+      <svg id="vis"></svg>
 
       <h3>Interpretation</h3>
 
@@ -124,60 +90,44 @@
         </thead>
 
         <tbody>
-          <!-- d level functionality -->
+          <!-- a minus level functionality -->
           <tr>
             <td class="has-text-centered">
               <i class="far fa-fw fa-check-circle has-text-success"></i>
             </td>
 
             <td class="has-text-centered">
-              D
+              A-
             </td>
 
             <td>
               If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
             </td>
           </tr>
-
-          <!-- c level functionality -->
-          <tr>
-            <td class="has-text-centered">
-              <i class="far fa-fw fa-check-circle has-text-success"></i>
-            </td>
-
-            <td class="has-text-centered">
-              C
-            </td>
-
-            <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
-            </td>
-          </tr>
-
-          <!-- b level functionality -->
-          <tr>
-            <td class="has-text-centered">
-              <i class="far fa-fw fa-times-circle has-text-danger"></i>
-            </td>
-
-            <td class="has-text-centered">
-              B
-            </td>
-
-            <td>
-              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
-            </td>
-          </tr>
-
 
           <!-- a level functionality -->
           <tr>
             <td class="has-text-centered">
-              <i class="far fa-fw fa-times-circle has-text-danger"></i>
+              <i class="far fa-fw fa-check-circle has-text-success"></i>
             </td>
 
             <td class="has-text-centered">
-              A
+             A
+            </td>
+
+            <td>
+              If appropriate, provide a brief justification for this level of functionality. Clearly state if this level was not implemented.
+            </td>
+          </tr>
+
+          <!-- a plus level functionality -->
+          <tr>
+            <td class="has-text-centered">
+              <i class="far fa-fw fa-check-circle has-text-success"></i>
+            </td>
+
+            <td class="has-text-centered">
+              A+
             </td>
 
             <td>
@@ -193,8 +143,10 @@
     </div>
   </section>
 
+  <!-- separator between sections -->
+  <hr class="container">
+
   <!-- about section -->
-  <!-- todo: can fill in, or link to an about page you use for all assignments -->
   <section class="section">
     <div class="container content">
       <h2 id="about">
@@ -204,25 +156,23 @@
       <div class="media">
         <div class="media-left">
           <p class="image is-128x128">
-            <!-- todo: replace with your profile image -->
-            <img src="https://bulma.io/images/placeholders/128x128.png">
+            <img src="https://media.licdn.com/dms/image/C4D03AQF-Z1uoskTZZQ/profile-displayphoto-shrink_200_200/0?e=1555545600&v=beta&t=OOaQ6oiZeR3jYWe36rwIbUBVB1v1knW6W5G6hCHijNA">
           </p>
         </div>
 
         <div class="media-content">
             <p>
-              <!-- todo: replace with your information -->
-              <strong>Full Name</strong>
+              <strong>Brian Sung</strong>
               <br/>
-              This is a good place to place a brief biography describing your interests and skills, a professional profile photo, and/or links to your Github, Linkedin, and other <em>professional</em> social media accounts.
+              An enthusiastic and responsible man with ambition and creativity. Capable of working as a dedicated team member as well as an independent initiative taker.
               <br/>
               <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
-              <a href="https://github.com/">
+              <a href="https://github.com/ohbriansung" target="_blank">
                 <span class="fab fa-github"></span>
                 <span>Github</span>
               </a>
               &bullet;
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/in/ohbriansung" target="_blank">
                 <span class="fab fa-linkedin"></span>
                 <span>LinkedIn</span>
               </a>
@@ -230,7 +180,6 @@
 
         </div>
       </div>
-
     </div>
   </section>
 
@@ -251,6 +200,8 @@
       </small>
     </div>
   </footer>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
 <!-- end body and html -->
 </body>

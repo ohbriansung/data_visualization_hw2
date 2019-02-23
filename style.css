@@ -1,0 +1,28 @@
+svg, .prototypes {
+  background-color: white;
+  display: block;
+  margin: auto;
+  width: 960px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+.rect-background {
+  fill: white;
+}
+
+.axis text,
+.label {
+  fill: dimgrey;
+  font-size: 12px;
+}
+
+.captions {
+  fill: #7D7D7D;
+  font-size: 13.3px;
+}
+
+
+.title {
+  font-size: 20px;
+}
