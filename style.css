@@ -7,6 +7,23 @@ svg, .prototypes {
   border: 1px solid black;
 }
 
+.legend {
+    display: block;
+    margin: auto;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 80%;
+}
+
+.right {
+    width: 20%;
+}
+
 .rect-background {
   fill: white;
 }
