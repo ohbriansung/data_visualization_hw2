@@ -24,6 +24,11 @@ svg, .prototypes {
     width: 20%;
 }
 
+.line {
+  stroke: #F0F0F0;
+  fill: none;
+}
+
 .rect-background {
   fill: white;
 }

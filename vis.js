@@ -60,12 +60,20 @@ parallelCoordinates = function(data) {
 
   x.domain(dimensions);
 
-  let minimum = getMin(x, dimensions);
-  let dimension = plot.selectAll("g")
+  let minimum = getMin(x, dimensions) - margin.left;
+
+  let background = plot.append("g")
+    .attr("class", "line")
+    .selectAll("path")
+    .data(data)
+    .enter().append("path")
+    .attr("d", path);
+
+  let dimension = plot.selectAll(".dimension")
     .data(dimensions)
     .enter().append("g")
     .attr("class", "dimension")
-    .attr("transform", function(d) { return translate(x(d) - minimum + margin.left, 0); });
+    .attr("transform", function(d) { return translate(x(d) - minimum, 0); });
 
   dimension.append("g")
     .attr("class", "axis")
@@ -75,16 +83,9 @@ parallelCoordinates = function(data) {
     .attr("y", -10)
     .text(function(d) { return d; });
 
-  /*background = plot.append("g")
-    .attr("class", "background")
-    .selectAll("path")
-    .data(data)
-    .enter().append("path")
-    .attr("d", path);
-
   function path(d) {
-    return d3.line(dimensions.map(function(p) { return [x(p), y[p](d[p])]; }));
-  }*/
+    return d3.line()(dimensions.map(function(p) { return [x(p) - minimum, y[p](+d[p])]; }));
+  }
 }
 
 d3.csv(
