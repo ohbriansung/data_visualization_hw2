@@ -142,8 +142,6 @@ parallelCoordinates = function(data, tier_map) {
   let color_map = get_colors(tier_map);
   let colorScale = d3.scaleOrdinal().range(color_map).domain(tier_map);
 
-  console.log(plotWidth)
-
   // legend
   let legend = svg.selectAll(".legend")
 		.data(colorScale.domain())
@@ -209,4 +207,5 @@ d3.csv(
 .then(function(d) {
   let tier_map = get_tiers(d);
   parallelCoordinates(d, tier_map);
+  highlight(d);
 })
